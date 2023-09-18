@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce8iw2frv07w5"]
+
+[ext_resource type="Script" path="res://Intro to Godot - Assets/Scripts/IntroToScripting.gd" id="1_jcqha"]
+[ext_resource type="Texture2D" uid="uid://dbi7ui11plpy2" path="res://Intro to Godot - Assets/Sprites/Player.png" id="2_euyny"]
+[ext_resource type="Script" path="res://Intro to Godot - Assets/Scripts/MoverTest.gd" id="3_mlwr1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jcqha")
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_euyny")
+script = ExtResource("3_mlwr1")

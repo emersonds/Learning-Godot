@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfvc675k8mk2t"]
+
+[ext_resource type="Texture2D" uid="uid://dbi7ui11plpy2" path="res://Intro to Godot - Assets/Sprites/Player.png" id="1_66dp8"]
+
+[node name="Player" type="Sprite2D"]
+texture = ExtResource("1_66dp8")

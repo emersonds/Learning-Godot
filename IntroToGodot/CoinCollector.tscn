@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://defn4vin07vts"]
+
+[ext_resource type="Script" path="res://Intro to Godot - Assets/Scripts/Player.gd" id="1_2s728"]
+[ext_resource type="Texture2D" uid="uid://dbi7ui11plpy2" path="res://Intro to Godot - Assets/Sprites/Player.png" id="1_h5dir"]
+[ext_resource type="PackedScene" uid="uid://c5oovkjksn6qi" path="res://Coin.tscn" id="3_mkcc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yttq0"]
+size = Vector2(53, 66)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_2s728")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Sprite" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_h5dir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-0.5, 15)
+shape = SubResource("RectangleShape2D_yttq0")
+
+[node name="Coin" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(-172, -55)
+
+[node name="Coin2" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(-152, 53)
+
+[node name="Coin3" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(-80, 156)
+
+[node name="Coin4" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(111, 86)
+
+[node name="Coin5" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(132, -66)
+
+[node name="Coin6" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(-18, -90)
+
+[node name="Coin7" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(43, 123)
+
+[node name="Coin8" parent="." instance=ExtResource("3_mkcc0")]
+position = Vector2(136, 4)
