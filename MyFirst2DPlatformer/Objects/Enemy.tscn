@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://kl678xxjs2x4"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_j8sol"]
+[ext_resource type="Texture2D" uid="uid://co7m7v8jvcvjb" path="res://Sprites/Kenney 1Bit Platformer Pack/tile_0381.png" id="2_pfl7i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exsk0"]
+radius = 7.0
+
+[node name="Enemy" type="Area2D"]
+position = Vector2(37, -21)
+script = ExtResource("1_j8sol")
+move_dir = Vector2(0, -50)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_pfl7i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_exsk0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

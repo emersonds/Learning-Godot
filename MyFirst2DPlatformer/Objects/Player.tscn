@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://canprr26npfpi"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_jdbqw"]
+[ext_resource type="Texture2D" uid="uid://d14llag3hs5j3" path="res://Sprites/Kenney 1Bit Platformer Pack/tile_0243.png" id="2_1bxp2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jc0b7"]
+radius = 6.0
+height = 12.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_1dvn7"]
+font_size = 30
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+position = Vector2(0, -17)
+script = ExtResource("1_jdbqw")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_1bxp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_jc0b7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -23)
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" type="Label" parent="CanvasLayer"]
+offset_left = 23.0
+offset_top = 17.0
+offset_right = 84.0
+offset_bottom = 43.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_1dvn7")

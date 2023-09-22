@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://57musqu3wxf6"]
+
+[ext_resource type="Script" path="res://Scripts/Coin.gd" id="1_p7mbj"]
+[ext_resource type="Texture2D" uid="uid://dqjgubi2mydce" path="res://Sprites/Kenney 1Bit Platformer Pack/tile_0002.png" id="2_clxtb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0jdl3"]
+radius = 6.0
+
+[node name="Coin" type="Area2D"]
+position = Vector2(63, -10)
+script = ExtResource("1_p7mbj")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_clxtb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0jdl3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
