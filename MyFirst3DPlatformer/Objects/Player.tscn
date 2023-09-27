@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4df3hq0v1io2"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_tyfm3"]
+[ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://Models/characterVampire.obj" id="2_smcjf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_q7etd"]
+radius = 0.3
+height = 1.2
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_tyfm3")
+
+[node name="Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = ExtResource("2_smcjf")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.616505, 0)
+shape = SubResource("CapsuleShape3D_q7etd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.922754, 0.385391, 0, -0.385391, 0.922754, 0, 2.21545, 4.08728)
+fov = 60.6
